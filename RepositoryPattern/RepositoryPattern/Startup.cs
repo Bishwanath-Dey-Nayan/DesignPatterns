@@ -30,6 +30,7 @@ namespace RepositoryPattern
         {
             services.AddDbContext<ApplicationContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:EmployeeDB"]));
             services.AddScoped<IDataRepository<Employee>, EmployeeManager>();
+            services.AddScoped<IGenericRepository<Employee>, GenericRepository<Employee>>();
             services.AddControllers();
         }
 
